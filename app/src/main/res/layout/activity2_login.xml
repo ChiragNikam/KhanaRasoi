@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity2_Login">
+
+    <ImageView
+        android:id="@+id/image_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:clipToOutline="true"
+        android:layout_marginTop="83dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_appName"
+        android:layout_width="242dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAppearance="@style/khana_rasoi_font"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/image_logo"
+        app:layout_constraintStart_toStartOf="@+id/image_logo"
+        app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+
+    <TextView
+        android:id="@+id/txtView_deliver"
+        android:layout_width="162dp"
+        android:layout_height="17dp"
+        android:gravity="center"
+        android:layout_marginTop="11dp"
+        android:text="Deliver favourite food"
+        android:textAppearance="@style/khana_rasoi_font"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtView_appName"
+        app:layout_constraintStart_toStartOf="@+id/txtView_appName"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_appName" />
+
+    <TextView
+        android:id="@+id/txtView_login"
+        android:layout_width="223dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:text="Login to your account"
+        android:textAppearance="@style/khana_rasoi_font"
+        android:textColor="@color/green"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtView_deliver"
+        app:layout_constraintStart_toStartOf="@+id/txtView_deliver"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_deliver" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
