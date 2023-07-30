@@ -8,5 +8,9 @@
         <item name="android:fontFamily">@font/yeon_sung_regular</item>
         <item name="android:textColor">@color/black</item>
     </style>
+    <style name="lato_text">
+        <item name="android:fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
     <style name="Theme.KhanaRasoi" parent="Base.Theme.KhanaRasoi" />
 </resources>

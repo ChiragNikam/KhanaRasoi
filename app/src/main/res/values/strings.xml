@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KhanaRasoi</string>
+    <string name="deliver_favorite_food">Deliver Favorite Food</string>
+    <string name="designed_by_chirag_nikam">Designed by Chirag Nikam</string>
 </resources>
