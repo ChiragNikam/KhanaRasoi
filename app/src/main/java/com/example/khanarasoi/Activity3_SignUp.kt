@@ -16,5 +16,9 @@ class Activity3_SignUp : AppCompatActivity() {
             val intent = Intent(this, Activity2_Login::class.java)
             startActivity(intent)
         }
+        binding.btnCreateAccount.setOnClickListener{
+            val intent = Intent(this, Activity4_ChoseLocation::class.java)
+            startActivity(intent)
+        }
     }
 }
