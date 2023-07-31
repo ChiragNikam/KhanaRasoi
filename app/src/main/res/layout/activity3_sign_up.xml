@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity2_Login">
+    tools:context=".Activity3_SignUp">
 
     <ImageView
         android:id="@+id/image_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="42dp"
         android:clipToOutline="true"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +22,9 @@
         android:id="@+id/txtView_appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="50sp"
-        android:textAppearance="@style/khana_rasoi_font"
         android:text="@string/app_name"
+        android:textAppearance="@style/khana_rasoi_font"
+        android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/image_logo"
         app:layout_constraintStart_toStartOf="@+id/image_logo"
         app:layout_constraintTop_toBottomOf="@+id/image_logo" />
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
-        android:text="Login To Your Account"
+        android:text="Sign Up Here"
         android:textAppearance="@style/lato_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtView_deliver"
@@ -55,34 +55,47 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_deliver" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_email_or_phone"
+        android:id="@+id/editText_user_name"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
-        android:drawableStart="@drawable/mail"
-        android:hint="Email or Phone Number"
-        android:drawablePadding="17dp"
-        android:paddingStart="17dp"
         android:background="@drawable/input_text"
+        android:drawableStart="@drawable/mail"
+        android:drawablePadding="17dp"
+        android:hint="User Name"
+        android:paddingStart="17dp"
         app:layout_constraintEnd_toEndOf="@+id/txtView_login"
         app:layout_constraintStart_toStartOf="@+id/txtView_login"
         app:layout_constraintTop_toBottomOf="@+id/txtView_login" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_password"
+        android:id="@+id/editText_email_or_phone"
         android:layout_width="370dp"
         android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:drawableStart="@drawable/password"
-        android:hint="Password"
-        android:drawablePadding="17dp"
-        android:paddingStart="17dp"
         android:background="@drawable/input_text"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="@+id/editText_email_or_phone"
-        app:layout_constraintStart_toStartOf="@+id/editText_email_or_phone"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email_or_phone" />
+        android:drawableStart="@drawable/mail"
+        android:drawablePadding="17dp"
+        android:hint="Email or Phone Number"
+        android:paddingStart="17dp"
+        android:layout_marginTop="7dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_user_name"
+        app:layout_constraintStart_toStartOf="@+id/editText_user_name"
+        app:layout_constraintTop_toBottomOf="@+id/editText_user_name" />
 
+  <androidx.appcompat.widget.AppCompatEditText
+      android:id="@+id/editText_password"
+      android:layout_width="370dp"
+      android:layout_height="48dp"
+      android:layout_marginTop="7dp"
+      android:drawableStart="@drawable/password"
+      android:hint="Password"
+      android:drawablePadding="17dp"
+      android:paddingStart="17dp"
+      android:background="@drawable/input_text"
+      android:inputType="textPassword"
+      app:layout_constraintEnd_toEndOf="@+id/editText_email_or_phone"
+      app:layout_constraintStart_toStartOf="@+id/editText_email_or_phone"
+      app:layout_constraintTop_toBottomOf="@+id/editText_email_or_phone" />
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_or"
         android:layout_width="wrap_content"
@@ -90,7 +103,7 @@
         android:text="or"
         android:textAppearance="@style/khana_rasoi_font"
         android:textSize="18sp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="@+id/editText_password"
         app:layout_constraintStart_toStartOf="@+id/editText_password"
         app:layout_constraintTop_toBottomOf="@+id/editText_password" />
@@ -99,7 +112,7 @@
         android:id="@+id/txtView_continue_with"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Continue With"
+        android:text="Sign Up With"
         android:textSize="24sp"
         android:textAppearance="@style/khana_rasoi_font"
         app:layout_constraintEnd_toEndOf="@+id/txtView_or"
@@ -139,10 +152,10 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_create_account"
-        android:layout_width="157dp"
+        android:layout_width="200dp"
         android:layout_height="57dp"
         android:layout_marginTop="120dp"
-        android:text="Login"
+        android:text="Create Account"
         android:textAllCaps="false"
         android:textAppearance="@style/khana_rasoi_font"
         android:textColor="@color/white"
@@ -152,32 +165,20 @@
         app:layout_constraintStart_toStartOf="@+id/btn_facebook"
         app:layout_constraintTop_toBottomOf="@+id/txtView_continue_with" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txtView_dont_have_Account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dont Have Account?"
-        android:textAppearance="@style/lato_text"
-        android:textSize="20sp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/btn_create_account"
-        app:layout_constraintStart_toStartOf="@+id/btn_create_account"
-        app:layout_constraintTop_toBottomOf="@+id/btn_create_account" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_have_account"
         android:layout_width="200dp"
         android:layout_height="38dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="2dp"
         android:gravity="center"
-        android:text="@string/designed_by_chirag_nikam"
+        android:text="Alredy have an Account"
         android:textAppearance="@style/khana_rasoi_font"
         android:textColor="@color/green"
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/txtView_dont_have_Account"
-        app:layout_constraintStart_toStartOf="@+id/txtView_dont_have_Account"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_dont_have_Account" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_create_account"
+        app:layout_constraintStart_toStartOf="@+id/btn_create_account"
+        app:layout_constraintTop_toBottomOf="@+id/btn_create_account" />
 </androidx.constraintlayout.widget.ConstraintLayout>

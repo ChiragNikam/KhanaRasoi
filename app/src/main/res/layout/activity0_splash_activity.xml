@@ -29,7 +29,7 @@
         android:layout_gravity="center_horizontal" />
 
     <TextView
-        android:id="@+id/design_by_n"
+        android:id="@+id/txtView_have_account"
         android:layout_width="155dp"
         android:layout_height="40dp"
         android:layout_gravity="center_horizontal"
