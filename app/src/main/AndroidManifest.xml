@@ -13,6 +13,9 @@
         android:theme="@style/Theme.KhanaRasoi"
         tools:targetApi="31">
         <activity
+            android:name=".Activity5_BottomNavigationBar"
+            android:exported="true" />
+        <activity
             android:name=".Activity4_ChoseLocation"
             android:exported="false" />
         <activity
