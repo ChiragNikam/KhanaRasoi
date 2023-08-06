@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_bottom_bar"
+    app:startDestination="@id/fragment1_Home">
+
+    <fragment
+        android:id="@+id/fragment1_Home"
+        android:name="com.example.khanarasoi.a_Fragments.Fragment1_Home"
+        android:label="fragment1_home"
+        tools:layout="@layout/fragment1_home" />
+    <fragment
+        android:id="@+id/fragment2_Cart"
+        android:name="com.example.khanarasoi.a_Fragments.Fragment2_Cart"
+        android:label="fragment2_cart"
+        tools:layout="@layout/fragment2_cart" />
+    <fragment
+        android:id="@+id/fragment3_Search"
+        android:name="com.example.khanarasoi.a_Fragments.Fragment3_Search"
+        android:label="fragment3_search"
+        tools:layout="@layout/fragment3_search" />
+    <fragment
+        android:id="@+id/fragment4_History"
+        android:name="com.example.khanarasoi.a_Fragments.Fragment4_History"
+        android:label="fragment4_history"
+        tools:layout="@layout/fragment4_history" />
+    <fragment
+        android:id="@+id/fragment5_Profile"
+        android:name="com.example.khanarasoi.a_Fragments.Fragment5_Profile"
+        android:label="fragment5_profile"
+        tools:layout="@layout/fragment5_profile" />
+</navigation>
