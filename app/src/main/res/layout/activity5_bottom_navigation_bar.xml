@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".Activity5_BottomNavigationBar">
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -21,7 +22,7 @@
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@color/white"
+        android:background="@color/background_white"
         android:src="@drawable/bell_01"
         android:layout_marginEnd="13dp"
         android:contentDescription="Bell Icon"
@@ -34,7 +35,7 @@
         android:id="@+id/fragment_container_view"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="580dp"
+        android:layout_height="600dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation_bar"
@@ -46,7 +47,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         app:menu="@menu/menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
