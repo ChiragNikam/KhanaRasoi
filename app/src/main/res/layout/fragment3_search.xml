@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:background="@color/background_white">
 
-
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/editText_food_search"
             android:layout_width="0dp"
