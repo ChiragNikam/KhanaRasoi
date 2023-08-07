@@ -8,11 +8,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:src="@drawable/logo"
-        android:contentDescription="TODO" />
-    <TextView
+        android:contentDescription="App Logo" />
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_appName"
-        android:layout_width="242dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="50sp"
         android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
@@ -20,23 +20,23 @@
         android:textAppearance="@style/khana_rasoi_font"/>
     <TextView
         android:id="@+id/txtView_deliver"
-        android:layout_width="162dp"
-        android:layout_height="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="17sp"
         android:text="Deliver favourite food"
         android:textAppearance="@style/khana_rasoi_font"
         android:layout_gravity="center_horizontal" />
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_have_account"
-        android:layout_width="155dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="250dp"
         android:gravity="center"
         android:text="Designed by \nChirag Nikam"
         android:textAppearance="@style/khana_rasoi_font"
         android:textColor="@color/green"
-        android:textSize="17sp" />
+        android:textSize="17sp"/>
 </LinearLayout>

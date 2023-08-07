@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".a_Fragments.Fragment3_Search">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Search" />
+        android:background="@color/background_white">
 
-</FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editText_food_search"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/edit_text_search"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="20dp"
+            android:hint="What do you want to order"
+            android:inputType="textImeMultiLine"
+            android:maxLines="1"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:text="Menu"
+            android:textAppearance="@style/khana_rasoi_font"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="@+id/editText_food_search"
+            app:layout_constraintStart_toStartOf="@+id/editText_food_search"
+            app:layout_constraintTop_toBottomOf="@+id/editText_food_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_food_items"
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/menu"
+            app:layout_constraintHorizontal_bias="0.318"
+            app:layout_constraintStart_toStartOf="@+id/menu"
+            app:layout_constraintTop_toBottomOf="@+id/menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
