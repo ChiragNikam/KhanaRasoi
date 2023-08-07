@@ -9,7 +9,7 @@ import com.squareup.picasso.Picasso
 
 class Adapter2_CartItems(private val cartItems: List<Class1_CartItemsInfo>) :
     RecyclerView.Adapter<Adapter2_CartItems.Adapter_Binding>() {
-
+    // bug here
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter_Binding {
         return Adapter_Binding(
             Layout1CartItemsBinding.inflate(
