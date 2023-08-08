@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="29dp"
-                android:gravity="center"
+                android:gravity="start"
                 android:hint="Food Name"
                 android:textAppearance="@style/khana_rasoi_font"
                 android:textSize="20sp"

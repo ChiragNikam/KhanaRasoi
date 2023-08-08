@@ -43,18 +43,24 @@
             app:layout_constraintStart_toStartOf="@+id/editText_food_search"
             app:layout_constraintTop_toBottomOf="@+id/editText_food_search" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_food_items"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="540dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="17dp"
-            android:layout_marginEnd="7dp"
+            android:layout_height="600dp"
+            android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/menu"
             app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="@+id/menu"
-            app:layout_constraintTop_toBottomOf="@+id/menu" />
+            app:layout_constraintTop_toBottomOf="@+id/menu">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_food_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
