@@ -1,14 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".a_Fragments.Fragment5_Profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Profile" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/img_profile_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:cardCornerRadius="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_profile"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:background="@color/grey_font"
+            android:paddingBottom="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_picture" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_name"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/input_text"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile_picture"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/img_profile_picture"
+        app:layout_constraintTop_toBottomOf="@+id/img_profile_picture">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/yeon_sung_regular"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Name"
+            android:textSize="25sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_user_name"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:inputType="textPersonName"
+            android:background="@color/white"
+            android:drawablePadding="17dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="User Name"
+            android:paddingStart="17dp"
+            android:paddingEnd="5dp"
+            android:maxLines="1"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_email"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_text"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/layout_name"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="@+id/layout_name"
+        app:layout_constraintTop_toBottomOf="@+id/layout_name">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/yeon_sung_regular"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Email"
+            android:textSize="25sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_email"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawablePadding="17dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="17dp"
+            android:maxLines="1"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_phone_no"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="17dp"
+        android:background="@drawable/input_text"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/layout_name"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="@+id/layout_name"
+        app:layout_constraintTop_toBottomOf="@+id/layout_email">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/yeon_sung_regular"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Phone"
+            android:textSize="25sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_phone_no"
+            android:layout_width="250dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawablePadding="17dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="PhoneNo."
+            android:inputType="phone"
+            android:maxLines="1"
+            android:paddingStart="17dp"
+            android:paddingEnd="5dp"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layout_address"
+        android:layout_width="365dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/input_text"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/layout_phone_no"
+        app:layout_constraintHorizontal_bias="0.425"
+        app:layout_constraintStart_toStartOf="@+id/layout_phone_no"
+        app:layout_constraintTop_toBottomOf="@+id/layout_phone_no">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/yeon_sung_regular"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Address"
+            android:textSize="25sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_address"
+            android:layout_width="250dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:drawablePadding="17dp"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Address"
+            android:inputType="text"
+            android:maxLines="4"
+            android:paddingStart="17dp"
+            android:paddingEnd="5dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_set_profilePicture"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/circle_background"
+        android:elevation="5dp"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/edit"
+        android:contentDescription="set profile"
+        app:layout_constraintBottom_toBottomOf="@+id/img_profile_picture"
+        app:layout_constraintEnd_toEndOf="@+id/img_profile_picture"
+        app:layout_constraintHorizontal_bias="1.1"
+        app:layout_constraintStart_toStartOf="@+id/img_profile_picture"
+        app:layout_constraintTop_toTopOf="@+id/img_profile_picture"
+        app:layout_constraintVertical_bias="0.98" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_update_profile"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/green_button"
+        android:fontFamily="@font/yeon_sung_regular"
+        android:text="Update Profile"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/layout_address"
+        app:layout_constraintStart_toStartOf="@+id/layout_address"
+        app:layout_constraintTop_toBottomOf="@+id/layout_address" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.khanarasoi.R
 import com.example.khanarasoi.b_Adapter.Adapter1_FoodItems
 import com.example.khanarasoi.c_Class.Class0_FoodItemsInfo
 import com.example.khanarasoi.databinding.Fragment3SearchBinding

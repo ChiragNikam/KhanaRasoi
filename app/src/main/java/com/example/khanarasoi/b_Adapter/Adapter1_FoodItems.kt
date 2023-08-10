@@ -3,20 +3,15 @@ package com.example.khanarasoi.b_Adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.khanarasoi.c_Class.Class0_FoodItemsInfo
 import com.example.khanarasoi.c_Class.Class1_CartItemsInfo
 import com.example.khanarasoi.databinding.Layout0FoodItemsBinding
 import com.squareup.picasso.Picasso
 
-class Adapter1_FoodItems() :
+class Adapter1_FoodItems(var food_details: List<Class0_FoodItemsInfo>) :
     RecyclerView.Adapter<Adapter1_FoodItems.Adapter_binding>() {
-    lateinit var lst_cart: List<Class1_CartItemsInfo>
-    private lateinit var food_details: List<Class0_FoodItemsInfo>
-    constructor(food_details: List<Class0_FoodItemsInfo>) : this() {
-        this.food_details = food_details
-    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter_binding {
         return Adapter_binding(
             Layout0FoodItemsBinding.inflate(
@@ -48,7 +43,6 @@ class Adapter1_FoodItems() :
                 food_info.food_image_url,
                 1
             )
-            lst_cart += cart_details
         }
     }
 

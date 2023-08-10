@@ -14,22 +14,28 @@
         tools:targetApi="31">
         <activity
             android:name=".Activity5_BottomNavigationBar"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activity4_ChoseLocation"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activity3_SignUp"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activity2_Login"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activity1_AppInfo"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
         <activity
             android:name=".Activity0SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="nosensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
