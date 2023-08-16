@@ -15,7 +15,8 @@
         <activity
             android:name=".Activity5_BottomNavigationBar"
             android:exported="true"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".Activity4_ChoseLocation"
             android:exported="false"

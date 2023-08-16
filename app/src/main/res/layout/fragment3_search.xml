@@ -11,7 +11,8 @@
         android:layout_height="match_parent"
         android:background="@color/background_white">
 
-        <androidx.appcompat.widget.AppCompatEditText
+
+        <androidx.appcompat.widget.SearchView
             android:id="@+id/editText_food_search"
             android:layout_width="0dp"
             android:layout_height="60dp"
@@ -19,13 +20,11 @@
             android:layout_marginTop="13dp"
             android:layout_marginEnd="7dp"
             android:background="@drawable/edit_text_search"
-            android:drawableStart="@drawable/search"
-            android:drawablePadding="20dp"
             android:hint="What do you want to order"
             android:inputType="textImeMultiLine"
             android:maxLines="1"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            app:searchIcon="@drawable/search"
+            app:iconifiedByDefault="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,24 +42,18 @@
             app:layout_constraintStart_toStartOf="@+id/editText_food_search"
             app:layout_constraintTop_toBottomOf="@+id/editText_food_search" />
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_food_items"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:orientation="vertical"
+            android:layout_height="540dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="7dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/menu"
             app:layout_constraintHorizontal_bias="0.318"
             app:layout_constraintStart_toStartOf="@+id/menu"
-            app:layout_constraintTop_toBottomOf="@+id/menu">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recycler_food_items"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:nestedScrollingEnabled="false"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-        </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

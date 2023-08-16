@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:background="@color/background_white">
@@ -42,6 +41,7 @@
                 android:textAppearance="@style/khana_rasoi_font"
                 android:textColor="@color/green"
                 android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtView_food_price"
                 app:layout_constraintStart_toEndOf="@+id/img_cart_food_item"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,6 +57,7 @@
                 android:textSize="25sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txtView_food_name"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="@+id/txtView_food_name"
                 app:layout_constraintTop_toBottomOf="@+id/txtView_food_name" />
 
@@ -64,35 +65,39 @@
                 android:id="@+id/btn_munus"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:layout_marginStart="80dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/icon_minus"
                 android:contentDescription="btn_ninus"
                 app:layout_constraintBottom_toBottomOf="@+id/txtView_item_count"
-                app:layout_constraintStart_toEndOf="@+id/txtView_food_name"
+                app:layout_constraintEnd_toStartOf="@+id/txtView_item_count"
+                app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintTop_toTopOf="@+id/txtView_item_count" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtView_item_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="21dp"
-                android:text="1"
+                android:layout_width="25dp"
+                android:layout_height="21dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:text="10"
                 android:textAppearance="@font/lato_regular"
                 android:textSize="19sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
                 app:layout_constraintEnd_toStartOf="@+id/btn_plus"
-                app:layout_constraintStart_toEndOf="@+id/btn_munus"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/btn_plus"
+                app:layout_constraintVertical_bias="0.0" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_plus"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
-                android:layout_marginEnd="25dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/icon_plus"
                 android:contentDescription="btn_plus"
-                app:layout_constraintBottom_toBottomOf="@+id/txtView_item_count"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/txtView_item_count" />
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn_delete"
