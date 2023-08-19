@@ -12,10 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/yeon_sung_regular"
         android:gravity="center_horizontal"
         android:text="Menu"
-        android:fontFamily="@font/yeon_sung_regular"
-        android:textSize="30sp"/>
+        android:textSize="30sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_menu"
@@ -23,6 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="10dp" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

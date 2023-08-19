@@ -13,13 +13,14 @@ import com.example.khanarasoi.R
 import com.example.khanarasoi.databinding.Fragment5ProfileBinding
 
 class Fragment5_Profile : Fragment() {
-    private val binding: Fragment5ProfileBinding by lazy{
+    private val binding: Fragment5ProfileBinding by lazy {
         Fragment5ProfileBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.btnSetProfilePicture.setOnClickListener{
+        binding.btnSetProfilePicture.setOnClickListener {
             openGallery()
         }
     }
@@ -33,7 +34,7 @@ class Fragment5_Profile : Fragment() {
         }
     }
 
-    private fun openGallery(){
+    private fun openGallery() {
         val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         startActivityForResult(intent, 1)
     }

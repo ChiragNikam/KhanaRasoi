@@ -11,11 +11,11 @@
         android:id="@+id/image_logo"
         android:layout_width="333dp"
         android:layout_height="312dp"
-        android:layout_marginTop="98dp"
         android:layout_marginStart="13dp"
+        android:layout_marginTop="98dp"
         android:layout_marginEnd="14dp"
-        android:src="@drawable/img"
         android:contentDescription="@string/app_name"
+        android:src="@drawable/img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

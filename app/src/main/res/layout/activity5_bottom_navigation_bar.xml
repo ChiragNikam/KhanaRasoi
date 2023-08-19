@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginTop="36dp"
-        android:text="Explore Your Favourate Food"
         android:fontFamily="@font/yeon_sung_regular"
+        android:text="Explore Your Favourate Food"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,10 +22,10 @@
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:background="@color/background_white"
-        android:src="@drawable/bell_01"
         android:layout_marginEnd="13dp"
+        android:background="@color/background_white"
         android:contentDescription="Bell Icon"
+        android:src="@drawable/bell_01"
         app:layout_constraintBottom_toBottomOf="@+id/appCompatTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appCompatTextView" />
