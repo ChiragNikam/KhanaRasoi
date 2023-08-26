@@ -14,6 +14,11 @@ class Activity4_ChoseLocation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        val token = intent.getStringExtra("token")
+        val name = intent.getStringExtra("name")
+        val email = intent.getStringExtra("email")
+        val phone = intent.getStringExtra("phone")
+        val password = intent.getStringExtra("password")
         binding.btnGoNext.setOnClickListener {
             val intent = Intent(this, Activity5_BottomNavigationBar::class.java)
             startActivity(intent)

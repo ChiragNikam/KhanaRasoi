@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.khanarasoi"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.khanarasoi"
@@ -47,6 +47,8 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2") // implementation of card view library
     implementation("com.squareup.picasso:picasso:2.71828")  // implementation of picasso library for displaying image by url
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") // retrofit for implementation of API
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")   //gson converter
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
