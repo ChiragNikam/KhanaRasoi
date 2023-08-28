@@ -11,7 +11,7 @@
         android:id="@+id/image_logo"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="22dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,7 +45,7 @@
         android:id="@+id/txtView_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="16dp"
         android:text="Sign Up Here"
         android:textAppearance="@style/lato_text"
         android:textSize="24sp"
@@ -64,23 +64,40 @@
         android:drawablePadding="17dp"
         android:hint="User Name"
         android:paddingStart="17dp"
+        android:paddingEnd="5dp"
         app:layout_constraintEnd_toEndOf="@+id/txtView_login"
         app:layout_constraintStart_toStartOf="@+id/txtView_login"
         app:layout_constraintTop_toBottomOf="@+id/txtView_login" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_email_or_phone"
+        android:id="@+id/editText_email"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="7dp"
         android:background="@drawable/input_text"
         android:drawableStart="@drawable/mail"
         android:drawablePadding="17dp"
-        android:hint="Email or Phone Number"
+        android:hint="Email"
         android:paddingStart="17dp"
+        android:paddingEnd="5dp"
         app:layout_constraintEnd_toEndOf="@+id/editText_user_name"
         app:layout_constraintStart_toStartOf="@+id/editText_user_name"
         app:layout_constraintTop_toBottomOf="@+id/editText_user_name" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editText_phone"
+        android:layout_width="370dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/input_text"
+        android:drawableStart="@drawable/phone"
+        android:drawablePadding="17dp"
+        android:hint="Phone Number"
+        android:paddingStart="17dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_email"
+        app:layout_constraintStart_toStartOf="@+id/editText_email"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editText_password"
@@ -93,9 +110,10 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingStart="17dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText_email_or_phone"
-        app:layout_constraintStart_toStartOf="@+id/editText_email_or_phone"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email_or_phone" />
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_phone"
+        app:layout_constraintStart_toStartOf="@+id/editText_phone"
+        app:layout_constraintTop_toBottomOf="@+id/editText_phone" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_or"
@@ -128,6 +146,7 @@
         android:background="@drawable/white_button"
         android:drawableStart="@drawable/facebook_icon"
         android:paddingStart="22dp"
+        android:paddingEnd="22dp"
         android:text="Facebook"
         android:textAllCaps="false"
         android:textSize="17sp"
@@ -145,6 +164,7 @@
         android:background="@drawable/white_button"
         android:drawableStart="@drawable/google_icon"
         android:paddingStart="22dp"
+        android:paddingEnd="20dp"
         android:text="Google"
         android:textAllCaps="false"
         android:textSize="17sp"
@@ -153,18 +173,22 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_create_account"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="57dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="17dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
         android:background="@drawable/green_button"
         android:text="Create Account"
         android:textAllCaps="false"
         android:textAppearance="@style/khana_rasoi_font"
         android:textColor="@color/white"
         android:textSize="26sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtView_have_account"
         app:layout_constraintEnd_toEndOf="@+id/btn_Google"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btn_facebook"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_continue_with" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_facebook" />
 
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -180,6 +204,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btn_create_account"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/btn_create_account"
         app:layout_constraintTop_toBottomOf="@+id/btn_create_account" />
 </androidx.constraintlayout.widget.ConstraintLayout>

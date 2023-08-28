@@ -26,7 +26,7 @@ class Activity2_Login : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnLogin.setOnClickListener {
-            val email = binding.editTextEmailOrPhone.text.toString()
+            val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
             userLogin(email, password)
         }

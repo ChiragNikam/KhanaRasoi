@@ -56,7 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_deliver" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editText_email_or_phone"
+        android:id="@+id/editText_email"
         android:layout_width="370dp"
         android:layout_height="48dp"
         android:layout_marginTop="24dp"
@@ -65,6 +65,7 @@
         android:drawablePadding="17dp"
         android:hint="Email or Phone Number"
         android:paddingStart="17dp"
+        android:paddingEnd="5dp"
         app:layout_constraintEnd_toEndOf="@+id/txtView_login"
         app:layout_constraintStart_toStartOf="@+id/txtView_login"
         app:layout_constraintTop_toBottomOf="@+id/txtView_login" />
@@ -80,9 +81,10 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingStart="17dp"
-        app:layout_constraintEnd_toEndOf="@+id/editText_email_or_phone"
-        app:layout_constraintStart_toStartOf="@+id/editText_email_or_phone"
-        app:layout_constraintTop_toBottomOf="@+id/editText_email_or_phone" />
+        android:paddingEnd="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/editText_email"
+        app:layout_constraintStart_toStartOf="@+id/editText_email"
+        app:layout_constraintTop_toBottomOf="@+id/editText_email" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtView_or"

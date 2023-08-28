@@ -22,3 +22,8 @@ data class LoginResponse (
         )
     }
 }
+
+data class LoginFailedResponse(
+    val status: String,
+    val message: String
+)
