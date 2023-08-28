@@ -17,8 +17,8 @@ interface ApiService {
     fun register(@Body request: RegistrationRequest): Call<RegistrationResponse>
 
     // Fetch user profile by ID
-    @GET("/api/user/profile/{id}")
-    fun getUserProfile(@Path("id") userId: String): Call<UserProfileResponse>
+    @GET("/api/user/auth")
+    fun getUserProfile(@Header("Authorization") token: String): Call<UserProfileResponse>
 
     /*
 

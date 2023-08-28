@@ -40,7 +40,14 @@ class Activity3_SignUp : AppCompatActivity() {
     private fun createUser(name: String, email: String, phone: String, password: String) {
         val apiService =
             RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
-        val call = apiService.register(RegistrationRequest(name, email, phone, password))   // passing parameters of account to be created to the POST request
+        val call = apiService.register(
+            RegistrationRequest(
+                name,
+                email,
+                phone,
+                password
+            )
+        )   // passing parameters of account to be created to the POST request
         call.enqueue(object : Callback<RegistrationResponse> {
             override fun onResponse(
                 call: Call<RegistrationResponse>,
@@ -63,9 +70,15 @@ class Activity3_SignUp : AppCompatActivity() {
                     }
                     val intent = Intent(this@Activity3_SignUp, Activity4_ChoseLocation::class.java)
                     startActivity(intent)
-                } else{
-                    val registrationResponse = response.body()
-                    Toast.makeText(this@Activity3_SignUp, registrationResponse?.message , Toast.LENGTH_LONG).show()
+                } else {
+                    val registrationResponse = response.body()?.message
+                    Toast.makeText(
+                        this@Activity3_SignUp,
+                        registrationResponse,
+                        Toast.LENGTH_LONG
+                    ).show()
+                    Log.d("signUp_response", "response $registrationResponse")
+
                 }
             }
 

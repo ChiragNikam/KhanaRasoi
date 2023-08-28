@@ -2,7 +2,7 @@ package com.example.khanarasoi.d_API
 
 
 data class UserProfileResponse (
-    val status: Boolean,
+    val status: String,
     val data: UserInfo
 ){
     data class UserInfo(
@@ -13,6 +13,7 @@ data class UserProfileResponse (
         val password: String,
         val status: Boolean,
         val createdAt: String,
-        val updatedAt: String
+        val updatedAt: String,
+        val __v: String
     )
 }
