@@ -15,8 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class Fragment1_1_ViewMenu : BottomSheetDialogFragment() {
 
-    private lateinit var
-            binding: Fragment11ViewMenuBinding
+    private lateinit var binding: Fragment11ViewMenuBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +24,7 @@ class Fragment1_1_ViewMenu : BottomSheetDialogFragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = Fragment11ViewMenuBinding.inflate(inflater, container, false)

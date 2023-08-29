@@ -10,6 +10,9 @@ import android.widget.Toast
 import com.example.khanarasoi.d_API.LoginRequest
 import com.example.khanarasoi.d_API.LoginResponse
 import com.example.khanarasoi.databinding.Activity2LoginBinding
+import com.example.khanarasoi.e_LocalDatabase.a_Entities.Login
+import com.example.khanarasoi.e_LocalDatabase.b_DataAcessObject.Login_DAO
+import com.example.khanarasoi.e_LocalDatabase.c_Database.User_DbHelper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,9 +21,11 @@ class Activity2_Login : AppCompatActivity() {
     private val binding: Activity2LoginBinding by lazy {
         Activity2LoginBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
         binding.txtViewDontHaveAccount.setOnClickListener {
             val intent = Intent(this, Activity3_SignUp::class.java)
             startActivity(intent)
@@ -32,7 +37,9 @@ class Activity2_Login : AppCompatActivity() {
         }
     }
 
-    private fun userLogin(email: String, password: String) {    // Check email and password are correct or not from the api
+    private fun userLogin(
+        email: String, password: String
+    ) {    // Check email and password are correct or not from the api
         val apiService =
             RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
         val call = apiService.login(LoginRequest(email, password))
@@ -41,25 +48,21 @@ class Activity2_Login : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
-                        val intent =
-                            Intent(this@Activity2_Login, Activity4_ChoseLocation::class.java)
-                        intent.putExtra("token", loginResponse.data.token)
-                        intent.putExtra("name", loginResponse.data.user.name)
-                        intent.putExtra("email", loginResponse.data.user.email)
-                        intent.putExtra("phone", loginResponse.data.user.phone)
-                        intent.putExtra("password", loginResponse.data.user.password)
+                        val loginSharedPreferences =
+                            getSharedPreferences("LoginDetails", Context.MODE_PRIVATE)
+                        val editor = loginSharedPreferences.edit()
+                        editor.putString("token", loginResponse.data.token)
+                        editor.putString("email", loginResponse.data.user.email)
+                        editor.putString("password", loginResponse.data.user.password)
+                        editor.apply()
 
-//                        val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
-//                        val editor = sharedPreferences.edit()
-//                        editor.putString("token", loginResponse.data.token)
-//                        editor.putString("name", loginResponse.data.user.name)
-//                        editor.putString("phone", loginResponse.data.user.phone)
-//                        editor.putString("email", loginResponse.data.user.email)
-//                        editor.apply()
                         Log.d(
                             "login_data",
                             "token: ${loginResponse.data.token}, name: ${loginResponse.data.user.name}, email: ${loginResponse.data.user.email}"
                         )
+
+                        val intent =
+                            Intent(this@Activity2_Login, Activity4_ChoseLocation::class.java)
                         startActivity(intent)
                     } else {
                         Log.e("data", "Login Unsuccessful")

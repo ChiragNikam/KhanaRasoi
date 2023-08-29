@@ -2,29 +2,30 @@ package com.example.khanarasoi.e_LocalDatabase.a_Entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "Login")
 class Login(_token: String, _email: String, _pass: String) {
     @ColumnInfo(name = "token")
-    var token: String
+    var token_id: String
     @ColumnInfo(name = "email")
-    var email: String
+    var user_email: String
     @ColumnInfo(name = "password")
-    var password: String
+    var user_password: String
 
     init {
-        this.token = _token
-        this.email = _email
-        this.password = _pass
+        this.token_id = _token
+        this.user_email = _email
+        this.user_password = _pass
     }
 
     // Getters
-    fun getToken(): String = token
-    fun getEmail(): String = email
-    fun getPass(): String = password
+    fun getToken(): String = token_id
+    fun getEmail(): String = user_email
+    fun getPass(): String = user_password
 
     // Setters
-    fun setToken(token: String){ this.token = token}
-    fun setEmail(email: String){ this.email = email}
-    fun setPass(password: String){ this.password = password}
+    fun setToken(token: String){ this.token_id = token}
+    fun setEmail(email: String){ this.user_email = email}
+    fun setPass(password: String){ this.user_password = password}
 }
