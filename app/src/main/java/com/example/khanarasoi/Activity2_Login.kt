@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.khanarasoi.d_API.LoginRequest
 import com.example.khanarasoi.d_API.LoginResponse
@@ -13,6 +14,7 @@ import com.example.khanarasoi.databinding.Activity2LoginBinding
 import com.example.khanarasoi.e_LocalDatabase.a_Entities.Login
 import com.example.khanarasoi.e_LocalDatabase.b_DataAcessObject.Login_DAO
 import com.example.khanarasoi.e_LocalDatabase.c_Database.User_DbHelper
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +56,7 @@ class Activity2_Login : AppCompatActivity() {
                         editor.putString("token", loginResponse.data.token)
                         editor.putString("email", loginResponse.data.user.email)
                         editor.putString("password", loginResponse.data.user.password)
+                        editor.putBoolean("logged", true)
                         editor.apply()
 
                         Log.d(

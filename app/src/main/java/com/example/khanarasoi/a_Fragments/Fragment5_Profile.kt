@@ -11,8 +11,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.khanarasoi.Activity2_Login
+import com.example.khanarasoi.d_API.UpdateRequest
 import com.example.khanarasoi.d_API.UserProfileResponse
 import com.example.khanarasoi.databinding.Fragment5ProfileBinding
+import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +27,12 @@ class Fragment5_Profile : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Getting Token from SharedPreferences
+        val loginSharedPreferences =
+            requireActivity().getSharedPreferences("LoginDetails", Context.MODE_PRIVATE)
+        val token = loginSharedPreferences.getString("token", "")
+        getUser(token.toString())
 
         binding.btnSetProfilePicture.setOnClickListener {
             openGallery()
@@ -41,10 +50,25 @@ class Fragment5_Profile : Fragment() {
             binding.editTextPhoneNo.isEnabled = true
         }
 
-        // Getting Token from
-        val loginSharedPreferences = requireActivity().getSharedPreferences("LoginDetails", Context.MODE_PRIVATE)
-        val token = loginSharedPreferences.getString("token", "")
-        getUser(token.toString())
+        binding.btnLogout.setOnClickListener {
+            val edit = loginSharedPreferences.edit()
+            edit.clear()
+            edit.putBoolean("logged", false)
+            edit.apply()
+            val intent = Intent(requireContext(), Activity2_Login::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnUpdateProfile.setOnClickListener {
+            val updatedProfile = UpdateRequest(
+                binding.editTextUserName.text.toString(),
+                binding.editTextEmail.text.toString(),
+                binding.editTextPhoneNo.text.toString(),
+                " "
+            )
+
+            updateUser(token.toString(), updatedProfile)
+        }
     }
 
     @Deprecated("Deprecated in Java")
@@ -73,20 +97,67 @@ class Fragment5_Profile : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    private fun getUser(token: String){
-        val apiService = RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
+    private fun getUser(token: String) {
+        val apiService =
+            RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
         val call = apiService.getUserProfile("Bearer $token")
         call.enqueue(object : Callback<UserProfileResponse> {
-            override fun onResponse(call: Call<UserProfileResponse>, response: Response<UserProfileResponse>) {
+            override fun onResponse(
+                call: Call<UserProfileResponse>,
+                response: Response<UserProfileResponse>
+            ) {
                 Log.d("ResponseCode", "response code: ${response.code()}")
                 if (response.isSuccessful) {
                     val userProfileResponse = response.body()
                     if (userProfileResponse != null) {
                         val userProfile = userProfileResponse.data
-                        Log.d("userProfile", "Name: ${userProfile.name}, Email: ${userProfile.email}")
+                        Log.d(
+                            "userProfile",
+                            "Name: ${userProfile.name}, Email: ${userProfile.email}"
+                        )
                         binding.editTextEmail.setText(userProfile.email)
                         binding.editTextUserName.setText(userProfile.name)
                         binding.editTextPhoneNo.setText(userProfile.phone)
+                    } else {
+                        Log.e("data", "User profile response body is null")
+                    }
+                } else {
+                    Log.e("data", "Failed to get user profile")
+                }
+            }
+
+            override fun onFailure(call: Call<UserProfileResponse>, t: Throwable) {
+                Log.e("data", "Unable to load API. Unsuccessful!")
+                t.message?.let { Log.e("data", it) }
+            }
+        })
+
+    }
+
+    private fun updateUser(token: String, userProfileUpdate: UpdateRequest) {
+        val apiService =
+            RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
+        val call = apiService.updateUserProfile("Bearer $token", userProfileUpdate)
+        call.enqueue(object : Callback<UserProfileResponse> {
+            override fun onResponse(
+                call: Call<UserProfileResponse>,
+                response: Response<UserProfileResponse>
+            ) {
+                Log.d("ResponseCode", "response code: ${response.code()}")
+                if (response.isSuccessful) {
+                    val userProfileResponse = response.body()
+                    if (userProfileResponse != null) {
+                        val userProfile = userProfileResponse.data
+                        Log.d(
+                            "userProfile",
+                            "Name: ${userProfile.name}, Email: ${userProfile.email}"
+                        )
+                        binding.editTextEmail.setText(userProfile.email)
+                        binding.editTextUserName.setText(userProfile.name)
+                        binding.editTextPhoneNo.setText(userProfile.phone)
+                        view?.let {
+                            Snackbar.make(it, "Updated Successfully", Snackbar.LENGTH_SHORT).show()
+                        }
                     } else {
                         Log.e("data", "User profile response body is null")
                     }

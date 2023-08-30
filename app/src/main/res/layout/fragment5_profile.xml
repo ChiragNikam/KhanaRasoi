@@ -238,4 +238,29 @@
         app:layout_constraintStart_toStartOf="@+id/layout_address"
         app:layout_constraintTop_toBottomOf="@+id/layout_address" />
 
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_logout"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/background_white"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logout_icon"
+        android:contentDescription="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtView_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/yeon_sung_regular"
+        android:text="Logout"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btn_logout"
+        app:layout_constraintStart_toStartOf="@+id/btn_logout"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

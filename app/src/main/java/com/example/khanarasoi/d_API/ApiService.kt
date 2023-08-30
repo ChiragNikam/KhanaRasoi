@@ -2,6 +2,7 @@ import com.example.khanarasoi.d_API.LoginRequest
 import com.example.khanarasoi.d_API.LoginResponse
 import com.example.khanarasoi.d_API.RegistrationRequest
 import com.example.khanarasoi.d_API.RegistrationResponse
+import com.example.khanarasoi.d_API.UpdateRequest
 import com.example.khanarasoi.d_API.UserProfileResponse
 import retrofit2.Call
 import retrofit2.http.*
@@ -20,11 +21,11 @@ interface ApiService {
     @GET("/api/user/auth")
     fun getUserProfile(@Header("Authorization") token: String): Call<UserProfileResponse>
 
-    /*
 
     // Update user profile
-    @PUT("/api/user/profile/{id}")
-    fun updateUserProfile(@Path("id") userId: Int, @Body profileUpdateRequest: ProfileUpdateRequest): Call<UserProfileResponse>
+    @PATCH("/api/user/auth")
+    fun updateUserProfile(@Header("Authorization") token: String, @Body profileUpdateRequest: UpdateRequest): Call<UserProfileResponse>
+    /*
 
     // Delete a user
     @DELETE("/api/user/{id}")
