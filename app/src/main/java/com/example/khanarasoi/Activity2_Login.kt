@@ -6,15 +6,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Toast
 import com.example.khanarasoi.d_API.LoginRequest
 import com.example.khanarasoi.d_API.LoginResponse
 import com.example.khanarasoi.databinding.Activity2LoginBinding
-import com.example.khanarasoi.e_LocalDatabase.a_Entities.Login
-import com.example.khanarasoi.e_LocalDatabase.b_DataAcessObject.Login_DAO
-import com.example.khanarasoi.e_LocalDatabase.c_Database.User_DbHelper
-import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,7 +39,7 @@ class Activity2_Login : AppCompatActivity() {
     ) {    // Check email and password are correct or not from the api
         val apiService =
             RetrofitClient.getClient("http://137.184.27.168:8000").create(ApiService::class.java)
-        val call = apiService.login(LoginRequest(email, password))
+        val call = apiService.userLogin(LoginRequest(email, password))
         call.enqueue(object : Callback<LoginResponse> {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {

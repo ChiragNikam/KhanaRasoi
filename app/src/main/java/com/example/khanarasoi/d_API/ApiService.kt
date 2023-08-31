@@ -1,3 +1,5 @@
+import com.example.khanarasoi.d_API.CategoriesResponse
+import com.example.khanarasoi.d_API.LoginAdminResponse
 import com.example.khanarasoi.d_API.LoginRequest
 import com.example.khanarasoi.d_API.LoginResponse
 import com.example.khanarasoi.d_API.RegistrationRequest
@@ -9,11 +11,11 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // Login API
+    // Login Request
     @POST("/api/user/auth/login")
-    fun login(@Body request: LoginRequest): Call<LoginResponse>
+    fun userLogin(@Body request: LoginRequest): Call<LoginResponse>
 
-    // Register API
+    // Register Request
     @POST("/api/user/auth/register")
     fun register(@Body request: RegistrationRequest): Call<RegistrationResponse>
 
@@ -25,8 +27,15 @@ interface ApiService {
     // Update user profile
     @PATCH("/api/user/auth")
     fun updateUserProfile(@Header("Authorization") token: String, @Body profileUpdateRequest: UpdateRequest): Call<UserProfileResponse>
-    /*
 
+    // Get all Categories using token id
+    @GET("/api/admin/category")
+    fun getAllCategories(@Header("Authorization") token: String): Call<CategoriesResponse>
+
+    //Admin Login Request
+    @POST("/api/admin/auth/login")
+    fun adminLogin(@Body request: LoginRequest): Call<LoginAdminResponse>
+    /*
     // Delete a user
     @DELETE("/api/user/{id}")
     fun deleteUser(@Path("id") userId: Int): Call<Void>
