@@ -76,6 +76,7 @@ class Adapter2_CartItems(private val cartItems: MutableList<Class1_CartItemsInfo
         }
     }
 
+    // bug here
     override fun getItemCount(): Int {
         return if (cartItems.isEmpty()) {
             0
