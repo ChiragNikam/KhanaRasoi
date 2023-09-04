@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.khanarasoi.b_Adapter.Adapter1_FoodItems
 import com.example.khanarasoi.c_Class.Class0_FoodItemsInfo
@@ -61,7 +62,7 @@ class Fragment3_Search : Fragment() {
             "https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/02/01171421/YFL-Pav-Bhaji-2.jpg?tr=w-1600"
         )
         val food_details = mutableListOf(food1, food2, food3, food4, food5, food6)
-        val adapter = Adapter1_FoodItems(food_details)
+        val adapter = Adapter1_FoodItems(requireContext(), food_details)
         binding.recyclerFoodItems.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerFoodItems.adapter = adapter
     }

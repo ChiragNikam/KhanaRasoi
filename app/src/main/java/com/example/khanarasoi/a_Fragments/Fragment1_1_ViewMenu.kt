@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.khanarasoi.R
 import com.example.khanarasoi.b_Adapter.Adapter1_FoodItems
@@ -87,7 +88,7 @@ class Fragment1_1_ViewMenu : BottomSheetDialogFragment() {
         )
         val food_details =
             mutableListOf(food1, food2, food3, food4, food5, food6, food7, food8, food9, food10)
-        val adapter = Adapter1_FoodItems(food_details)
+        val adapter = Adapter1_FoodItems(requireContext(), food_details)
         binding.recyclerMenu.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerMenu.adapter = adapter
     }
