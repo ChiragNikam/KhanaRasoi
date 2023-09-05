@@ -1,1 +1,21 @@
-/build
+# Android IDE and Build Files
+.gradle/
+.idea/
+*.iml
+build/
+local.properties
+
+# Generated Files
+app/build/
+app/release/
+captures/
+
+# User-Specific Files
+.DS_Store
+Thumbs.db
+
+# Logs and Temporary Files
+*.log
+*.log.*
+*.tmp
+*.swp
